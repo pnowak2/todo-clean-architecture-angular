@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoPresenter } from '@domisoft/todo-clean-architecture/lib/features/todo/presentation/todo.presenter';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'todo-clean-architecture-angular';
+  todos$ = this.todoPresenter.todos$;
+  todosCount$ = this.todoPresenter.todosCount$;
+  incompletedTodosCount$ = this.todoPresenter.incompletedTodosCount$;
+
+  constructor(private todoPresenter: TodoPresenter) {
+    this.todoPresenter.getAllTodos();
+  }
 }

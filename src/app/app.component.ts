@@ -8,43 +8,43 @@ import { TodoVM } from '@domisoft/todo-clean-architecture/lib/features/todo/pres
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  todos$ = this.todoPresenter.todos$;
-  todosCount$ = this.todoPresenter.todosCount$;
-  incompletedTodosCount$ = this.todoPresenter.incompletedTodosCount$;
+  todos$ = this.todoApp.todos$;
+  todosCount$ = this.todoApp.todosCount$;
+  incompletedTodosCount$ = this.todoApp.incompletedTodosCount$;
 
-  constructor(private todoPresenter: TodoPresenter) {
-    this.todoPresenter.getAllTodos();
+  constructor(private todoApp: TodoPresenter) {
+    this.todoApp.getAllTodos();
   }
 
   onAddItem(name: string) {
-    this.todoPresenter.addTodo(name);
+    this.todoApp.addTodo(name);
   }
 
   onItemCheck(todo: TodoVM, checked: boolean) {
     if (checked) {
-      this.todoPresenter.markTodoAsCompleted(todo.id);
+      this.todoApp.markTodoAsCompleted(todo.id);
     } else {
-      this.todoPresenter.markTodoAsIncompleted(todo.id);
+      this.todoApp.markTodoAsIncompleted(todo.id);
     }
   }
 
   onShowAll() {
-    this.todoPresenter.getAllTodos();
+    this.todoApp.getAllTodos();
   }
 
   onShowCompleted() {
-    this.todoPresenter.getCompletedTodos();
+    this.todoApp.getCompletedTodos();
   }
 
   onShowIncompleted() {
-    this.todoPresenter.getIncompletedTodos();
+    this.todoApp.getIncompletedTodos();
   }
 
   onRemoveCompleted() {
-    this.todoPresenter.removeCompletedTodos();
+    this.todoApp.removeCompletedTodos();
   }
 
   onRemoveItem(todo: TodoVM) {
-    this.todoPresenter.removeTodo(todo.id);
+    this.todoApp.removeTodo(todo.id);
   }
 }

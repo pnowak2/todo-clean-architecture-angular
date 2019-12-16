@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TodoPresenter } from '@domisoft/todo-clean-architecture/lib/features/todo/presentation/todo.presenter';
+import { TodoVM } from '@domisoft/todo-clean-architecture/lib/features/todo/presentation/state/todos.state';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,37 @@ export class AppComponent {
 
   constructor(private todoPresenter: TodoPresenter) {
     this.todoPresenter.getAllTodos();
+  }
+
+  onAddItem(name: string) {
+    this.todoPresenter.addTodo(name);
+  }
+
+  onItemCheck(todo: TodoVM, checked: boolean) {
+    if (checked) {
+      this.todoPresenter.markTodoAsCompleted(todo.id);
+    } else {
+      this.todoPresenter.markTodoAsIncompleted(todo.id);
+    }
+  }
+
+  onShowAll() {
+    this.todoPresenter.getAllTodos();
+  }
+
+  onShowCompleted() {
+    this.todoPresenter.getCompletedTodos();
+  }
+
+  onShowIncompleted() {
+    this.todoPresenter.getIncompletedTodos();
+  }
+
+  onRemoveCompleted() {
+    this.todoPresenter.removeCompletedTodos();
+  }
+
+  onRemoveItem(todo: TodoVM) {
+    this.todoPresenter.removeTodo(todo.id);
   }
 }

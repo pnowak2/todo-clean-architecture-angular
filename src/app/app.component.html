@@ -1,7 +1,22 @@
 Todo Clean Architecture
 
+<h3>
+  {{ incompletedTodosCount$ | async }} of {{ todosCount$ | async }} 
+</h3>
+
+<input #todo type="text">
+<button (click)="onAddItem(todo.value)">Add</button>
+<button (click)="onShowAll()">All</button>
+<button (click)="onShowCompleted()">Completed</button>
+<button (click)="onShowIncompleted()">Incompleted</button>
+<button (click)="onRemoveCompleted()">Remove completed</button>
+
 <ul>
   <li *ngFor="let todo of todos$ | async">
-    {{ todo.name }}
+    <input #checkbox 
+      type="checkbox" 
+      [attr.checked]="todo.completed || null" 
+      (click)="onItemCheck(todo, checkbox.checked)">
+    {{ todo.name }} <button (click)="onRemoveItem(todo)">x</button>
   </li>
 </ul>

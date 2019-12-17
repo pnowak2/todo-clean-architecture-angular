@@ -23,6 +23,9 @@
   "private": true,
   "dependencies": {
     "@domisoft/todo-clean-architecture": "^1.0.0",
+    "todomvc-app-css": "^2.0.0",
+    "todomvc-common": "^1.0.0",
+
     "@angular/animations": "~7.2.0",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",

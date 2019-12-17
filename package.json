@@ -1,5 +1,6 @@
 {
   "name": "todo-clean-architecture-angular",
+  "description": "Clean Architecture Concepts Applied",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,8 +10,19 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnowak2/todo-clean-architecture-angular.git"
+  },
+  "author": "Piotr Nowak",
+  "license": "ISC",
+  "keywords": [
+    "Clean",
+    "Architecture"
+  ],
   "private": true,
   "dependencies": {
+    "@domisoft/todo-clean-architecture": "^1.0.3",
     "@angular/animations": "~7.2.0",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
@@ -25,7 +37,6 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@domisoft/todo-clean-architecture": "^1.0.3",
     "@angular-devkit/build-angular": "~0.13.0",
     "@angular/cli": "~7.3.9",
     "@angular/compiler-cli": "~7.2.0",

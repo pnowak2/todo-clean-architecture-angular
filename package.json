@@ -1,5 +1,5 @@
 {
-  "name": "todo-clean-architecture-angular",
+  "name": "@domisoft/todo-clean-architecture-angular",
   "description": "Clean Architecture Concepts Applied",
   "version": "0.0.0",
   "scripts": {

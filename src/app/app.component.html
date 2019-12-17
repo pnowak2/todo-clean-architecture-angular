@@ -15,9 +15,12 @@
       id="toggle-all" 
       class="toggle-all" 
       type="checkbox">
+    <label for="toggle-all">
+      Mark all as complete
+    </label>
 
     <ul class="todo-list">
-      <li *ngFor="let todo of todos$ | async">
+      <li *ngFor="let todo of todos$ | async" [class.completed]="todo.completed">
         <div class="view">
           <input 
             #checkbox 
@@ -37,6 +40,18 @@
       <strong>{{ incompletedTodosCount$ | async }}</strong> item(s) left
     </span>
 
+    <ul class="filters">
+      <li>
+        <a href="#/" class="selected" (click)="onShowAll()">All</a>
+      </li>
+      <li>
+        <a href="#/active" (click)="onShowIncompleted()">Active</a>
+      </li>
+      <li>
+        <a href="#/completed" (click)="onShowCompleted()">Completed</a>
+      </li>
+    </ul>
+
     <button 
       class="clear-completed" 
       (click)="onRemoveCompleted()">
@@ -44,6 +59,12 @@
     </button>
   </footer>
 </section>
+
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+  <p>Created by <a href="mailto:piotr-andrzej.nowak@ext.ec.europa.eu">Piotr Nowak</a></p>
+  <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+</footer>
 
 <!-- <section class="todoapp">
   <header class="header">

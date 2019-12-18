@@ -25,7 +25,6 @@ import { TodosComponent } from './todos/todos.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoHeaderComponent } from './todo-header/todo-header.component';
 import { TodoFooterComponent } from './todo-footer/todo-footer.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './todo.component';
@@ -37,7 +36,6 @@ import { TodoComponent } from './todo.component';
         TodoItemComponent,
         TodoHeaderComponent,
         TodoFooterComponent,
-        TodoListComponent,
     ],
     imports: [
         BrowserModule,
@@ -49,7 +47,6 @@ import { TodoComponent } from './todo.component';
         TodoItemComponent,
         TodoHeaderComponent,
         TodoFooterComponent,
-        TodoListComponent,
     ],
     providers: [
         {

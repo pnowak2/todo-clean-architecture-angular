@@ -29,15 +29,17 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoHeaderComponent } from './todo-header/todo-header.component';
 import { TodoFooterComponent } from './todo-footer/todo-footer.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodosComponent } from './todos/todos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    TodosComponent,
     TodoItemComponent,
     TodoHeaderComponent,
     TodoFooterComponent,
-    TodoListComponent
+    TodoListComponent,
   ],
   imports: [
     BrowserModule,

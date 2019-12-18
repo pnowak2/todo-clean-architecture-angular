@@ -16,6 +16,7 @@ export class TodoHeaderComponent implements OnInit {
 
   onAddItem() {
     this.addItem.next(this.name);
+    this.name = '';
   }
 
 }

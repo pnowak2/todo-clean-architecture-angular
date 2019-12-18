@@ -20,27 +20,27 @@ export class AppComponent {
     this.todoApp.addTodo(name);
   }
 
-  onCheckItem(todo: TodoVM, checked: boolean) {
-    if (checked) {
+  onCheckItem(todo: TodoVM) {
       this.todoApp.markTodoAsCompleted(todo.id);
-    } else {
+  }
+
+  onUncheckItem(todo: TodoVM) {
       this.todoApp.markTodoAsIncompleted(todo.id);
-    }
   }
 
   onShowAll() {
     this.todoApp.getAllTodos();
   }
 
+  onShowActive() {
+    this.todoApp.getIncompletedTodos();
+  }
+
   onShowCompleted() {
     this.todoApp.getCompletedTodos();
   }
 
-  onShowIncompleted() {
-    this.todoApp.getIncompletedTodos();
-  }
-
-  onRemoveCompleted() {
+  onClearCompleted() {
     this.todoApp.removeCompletedTodos();
   }
 

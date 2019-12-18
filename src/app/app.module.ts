@@ -25,106 +25,17 @@ import { TodoDefaultPresenter } from '@domisoft/todo-clean-architecture/lib/feat
 import { TodoPresenter } from '@domisoft/todo-clean-architecture/lib/features/todo/presentation/todo.presenter';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoItemComponent } from './todo-item/todo-item.component';
-import { TodoHeaderComponent } from './todo-header/todo-header.component';
-import { TodoFooterComponent } from './todo-footer/todo-footer.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { TodosComponent } from './todos/todos.component';
+import { TodoModule } from './todo/todo.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodosComponent,
-    TodoItemComponent,
-    TodoHeaderComponent,
-    TodoFooterComponent,
-    TodoListComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    AppRoutingModule
-  ],
-  providers: [
-    {
-      provide: TodoRepository,
-      useFactory: () => {
-        return new TodoInMemoryRepository();
-      }
-    },
-    {
-      provide: AddTodoUseCase,
-      useFactory: (repo) => {
-        return new AddTodoUseCase(repo);
-      },
-      deps: [TodoRepository]
-    },
-    {
-      provide: GetAllTodosUseCase,
-      useFactory: (repo) => {
-        return new GetAllTodosUseCase(repo);
-      },
-      deps: [TodoRepository]
-    },
-    {
-      provide: GetCompletedTodosUseCase,
-      useFactory: (repo) => {
-        return new GetCompletedTodosUseCase(repo);
-      },
-      deps: [TodoRepository]
-    },
-    {
-      provide: GetIncompletedTodosUseCase,
-      useFactory: (repo) => {
-        return new GetIncompletedTodosUseCase(repo);
-      },
-      deps: [TodoRepository]
-    },
-    {
-      provide: MarkTodoAsCompletedUseCase,
-      useFactory: (repo) => {
-        return new MarkTodoAsCompletedUseCase(repo);
-      },
-      deps: [TodoRepository]
-    },
-    {
-      provide: MarkTodoAsIncompletedUseCase,
-      useFactory: (repo) => {
-        return new MarkTodoAsIncompletedUseCase(repo);
-      },
-      deps: [TodoRepository]
-    },
-    {
-      provide: RemoveTodoUseCase,
-      useFactory: (repo) => {
-        return new RemoveTodoUseCase(repo);
-      },
-      deps: [TodoRepository]
-    },
-    {
-      provide: RemoveCompletedTodosUseCase,
-      useFactory: (repo) => {
-        return new RemoveCompletedTodosUseCase(repo);
-      },
-      deps: [TodoRepository]
-    },
-    {
-      provide: TodoPresenter,
-      useFactory: (a, b, c, d, e, f, g, h) => {
-        return new TodoDefaultPresenter(a, b, c, d, e, f, g, h);
-      },
-      deps: [
-        GetAllTodosUseCase,
-        GetCompletedTodosUseCase,
-        GetIncompletedTodosUseCase,
-        AddTodoUseCase,
-        MarkTodoAsCompletedUseCase,
-        MarkTodoAsIncompletedUseCase,
-        RemoveTodoUseCase,
-        RemoveCompletedTodosUseCase,
-      ]
-    },
+    AppRoutingModule,
+    TodoModule
   ],
   bootstrap: [AppComponent]
 })

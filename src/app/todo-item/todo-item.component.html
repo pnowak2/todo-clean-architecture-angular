@@ -4,7 +4,7 @@
     class="toggle"
     type="checkbox" 
     [attr.checked]="todo.completed || null"
-    (click)="onToggle(checkbox.checked)">
+    (click)="onToggleItem(checkbox.checked)">
     <label>{{ todo.name }}</label>
-    <button class="destroy" (click)="onRemoveItem(todo)"></button>
+    <button class="destroy" (click)="onRemoveItem()"></button>
 </div>

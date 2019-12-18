@@ -20,7 +20,7 @@ export class AppComponent {
     this.todoApp.addTodo(name);
   }
 
-  onItemCheck(todo: TodoVM, checked: boolean) {
+  onCheckItem(todo: TodoVM, checked: boolean) {
     if (checked) {
       this.todoApp.markTodoAsCompleted(todo.id);
     } else {

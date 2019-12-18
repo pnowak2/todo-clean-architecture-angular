@@ -1,12 +1,12 @@
 <header class="header">
   <h1>todos</h1>
   <input 
-    #todo
+    [(ngModel)]="name"
     type="text"
     class="new-todo" 
     placeholder="What needs to be done?" 
     autofocus="" 
-    (keyup.enter)="onAddItem(todo.value)">
+    (keyup.enter)="onAddItem()">
 
     <input 
       id="toggle-all" 

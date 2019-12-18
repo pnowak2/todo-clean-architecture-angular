@@ -6,6 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./todo-header.component.scss']
 })
 export class TodoHeaderComponent implements OnInit {
+  name: string;
   @Output() addItem = new EventEmitter<string>();
 
   constructor() { }
@@ -13,8 +14,8 @@ export class TodoHeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddItem(name: string) {
-    this.addItem.next(name);
+  onAddItem() {
+    this.addItem.next(this.name);
   }
 
 }

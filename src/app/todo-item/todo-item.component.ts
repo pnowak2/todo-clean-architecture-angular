@@ -9,14 +9,19 @@ import { TodoVM } from '@domisoft/todo-clean-architecture/lib/features/todo/pres
 export class TodoItemComponent implements OnInit {
   @Input() todo: TodoVM;
   @Output() toggle = new EventEmitter<boolean>();
+  @Output() remove = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onToggle(checked: boolean) {
+  onToggleItem(checked: boolean) {
     this.toggle.next(checked);
+  }
+
+  onRemoveItem() {
+    this.remove.next();
   }
 
 }

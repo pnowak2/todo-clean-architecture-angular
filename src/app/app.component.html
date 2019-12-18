@@ -1,7 +1,11 @@
 <section class="todoapp">
-  <app-todo-header></app-todo-header>
-  <ul app-todo-list class="todo-list">
-    <li app-todo-item *ngFor="let todo of todos$ | async" [todo]="todo" (toggle)="onItemCheck(todo, $event)"></li>
+  <app-todo-header (addItem)="onAddItem($event)"></app-todo-header>
+  <ul app-todo-list>
+    <li app-todo-item 
+      *ngFor="let todo of todos$ | async" 
+      [todo]="todo" 
+      (toggle)="onItemCheck(todo, $event)">
+    </li>
   </ul>
   <app-todo-footer></app-todo-footer>
 </section>

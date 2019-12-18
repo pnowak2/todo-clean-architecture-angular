@@ -1,0 +1,18 @@
+<header class="header">
+  <h1>todos</h1>
+  <input 
+    #todo
+    type="text"
+    class="new-todo" 
+    placeholder="What needs to be done?" 
+    autofocus="" 
+    (keyup.enter)="onAddItem(todo.value)">
+
+    <input 
+      id="toggle-all" 
+      class="toggle-all" 
+      type="checkbox">
+    <label for="toggle-all">
+      Mark all as complete
+    </label>
+</header>

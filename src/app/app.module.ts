@@ -24,11 +24,19 @@ import { TodoDefaultPresenter } from '@domisoft/todo-clean-architecture/lib/feat
 import { TodoPresenter } from '@domisoft/todo-clean-architecture/lib/features/todo/presentation/todo.presenter';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
+import { TodoHeaderComponent } from './todo-header/todo-header.component';
+import { TodoFooterComponent } from './todo-footer/todo-footer.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoItemComponent,
+    TodoHeaderComponent,
+    TodoFooterComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+<li>
+<div class="view">
+  <input 
+    #checkbox 
+    class="toggle"
+    type="checkbox" 
+    [attr.checked]="todo.completed || null"
+    (click)="onToggle(checkbox.checked)">
+    <label>{{ todo.name }}</label>
+    <button class="destroy" (click)="onRemoveItem(todo)"></button>
+</div>
+</li>

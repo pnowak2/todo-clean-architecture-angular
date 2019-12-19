@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoVM } from '@domisoft/todo-clean-architecture/lib/features/todo/presentation/viewmodel/todos.viewmodel';
 import { TodoPresenter } from '@domisoft/todo-clean-architecture/lib/features/todo/presentation/presenter/todo.presenter';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-todo',
@@ -12,8 +13,16 @@ export class TodoComponent implements OnInit {
   incompletedTodosCount$ = this.todoApp.incompletedTodosCount$;
   filter$ = this.todoApp.filter$;
 
-  constructor(private todoApp: TodoPresenter) {
-    this.todoApp.getAllTodos();
+  constructor(private todoApp: TodoPresenter, private route: ActivatedRoute) {
+    route.fragment.subscribe(p => {
+      if (p.includes('active')) {
+        this.todoApp.getIncompletedTodos();
+      } else if (p.includes('completed')) {
+        this.todoApp.getCompletedTodos();
+      } else {
+        this.todoApp.getAllTodos();
+      }
+    });
   }
 
   ngOnInit() {

@@ -1,8 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
-import { TodoVM } from '@domisoft/todo-clean-architecture/lib/features/todo/presentation/viewmodel/todos.viewmodel';
-import { TodoPresenter } from '@domisoft/todo-clean-architecture/lib/features/todo/presentation/presenter/todo.presenter';
-import { Router, ActivatedRoute } from '@angular/router';
+import { TodoVM } from '@domisoft/todo-clean-architecture';
+import { TodoPresenter } from '@domisoft/todo-clean-architecture';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-todo',

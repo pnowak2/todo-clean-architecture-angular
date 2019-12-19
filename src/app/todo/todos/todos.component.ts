@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { TodoVM } from '@domisoft/todo-clean-architecture/lib/features/todo/presentation/viewmodel/todos.viewmodel';
+import { TodoVM } from '@domisoft/todo-clean-architecture';
 
 @Component({
   selector: 'app-todos',

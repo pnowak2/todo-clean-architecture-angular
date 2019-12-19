@@ -3,7 +3,7 @@
   <app-todo-header 
   (addItem)="onAddItem($event)"
   (toggleAllCompleted)="onToggleAllCompleted()"
-  (toggleAllIncompleted)="onToggleAllIncompleted()">
+  (toggleAllActive)="onToggleAllActive()">
 </app-todo-header>
   <app-todos 
     [todos]="todos$ | async"
@@ -12,7 +12,7 @@
     (removeItem)="onRemoveItem($event)">
   </app-todos>
   <app-todo-footer 
-    [count]="incompletedTodosCount$ | async"
+    [count]="activeTodosCount$ | async"
     [filter]="filter$ | async"
     (all)="onShowAll()"
     (active)="onShowActive()"

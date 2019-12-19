@@ -11,7 +11,7 @@ export class TodoHeaderComponent implements OnInit {
 
   @Output() addItem = new EventEmitter<string>();
   @Output() toggleAllCompleted = new EventEmitter();
-  @Output() toggleAllIncompleted = new EventEmitter();
+  @Output() toggleAllActive = new EventEmitter();
 
   constructor() { }
 
@@ -27,7 +27,7 @@ export class TodoHeaderComponent implements OnInit {
     if (this.isToggleAll) {
       this.toggleAllCompleted.next();
     } else {
-      this.toggleAllIncompleted.next();
+      this.toggleAllActive.next();
     }
   }
 }

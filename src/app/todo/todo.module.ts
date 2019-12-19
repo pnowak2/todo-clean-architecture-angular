@@ -37,7 +37,7 @@ import { TodoPresenter } from '@domisoft/todo-clean-architecture/lib/features/to
             provide: TodoRepository,
             useFactory: () => {
                 return new TodoInMemoryRepository([
-                    { id: '1', title: 'test', completed: true }
+                    { id: '1', title: 'test', completed: false }
                 ]);
             }
         },

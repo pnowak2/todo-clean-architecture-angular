@@ -285,9 +285,9 @@
     to-fast-properties "^2.0.0"
 
 "@domisoft/todo-clean-architecture@^1.0.0":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@domisoft/todo-clean-architecture/-/todo-clean-architecture-1.0.6.tgz#dac29bab4cdb2cb6321e5e8d62380445c14fdb06"
-  integrity sha512-3moEC2+VloAvzgqNTConMQUs+nUbtW6t6aA//D5KlIvFV/1j+dcx9KKepyaUR9i2+XHNKAOqw6psf9PyfRxcUQ==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@domisoft/todo-clean-architecture/-/todo-clean-architecture-1.0.7.tgz#31f26ac84ef86efdd0e9391a6d3ae016b7f4b119"
+  integrity sha512-cM9Mdm+RylZb85ahRMahL1Io2JxIl+DvgoX6Nc5EJ+Qg520eNXe8eKOf3CzYGci0WBShuyEt8NNodWNf1TlyMw==
   dependencies:
     rxjs "^6.5.3"
 

@@ -10,13 +10,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class TodoComponent implements OnInit {
   todos$ = this.todoApp.todos$;
-  incompletedTodosCount$ = this.todoApp.incompletedTodosCount$;
+  activeTodosCount$ = this.todoApp.activeTodosCount$;
   filter$ = this.todoApp.filter$;
 
   constructor(private todoApp: TodoPresenter, private route: ActivatedRoute) {
     route.fragment.subscribe(p => {
       if (p.includes('active')) {
-        this.todoApp.getIncompletedTodos();
+        this.todoApp.getActiveTodos();
       } else if (p.includes('completed')) {
         this.todoApp.getCompletedTodos();
       } else {
@@ -37,7 +37,7 @@ export class TodoComponent implements OnInit {
   }
 
   onUncheckItem(todo: TodoVM) {
-    this.todoApp.markTodoAsIncompleted(todo.id);
+    this.todoApp.markTodoAsActive(todo.id);
   }
 
   onShowAll() {
@@ -45,7 +45,7 @@ export class TodoComponent implements OnInit {
   }
 
   onShowActive() {
-    this.todoApp.getIncompletedTodos();
+    this.todoApp.getActiveTodos();
   }
 
   onShowCompleted() {
@@ -64,7 +64,7 @@ export class TodoComponent implements OnInit {
     this.todoApp.markAllTodosAsCompleted();
   }
 
-  onToggleAllIncompleted() {
-    this.todoApp.markAllTodosAsIncompleted();
+  onToggleAllActive() {
+    this.todoApp.markAllTodosAsActive();
   }
 }

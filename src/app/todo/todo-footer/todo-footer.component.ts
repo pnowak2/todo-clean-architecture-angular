@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class TodoFooterComponent implements OnInit {
   @Input() count: number;
-  @Input() filter: number;
+  @Input() filter: string;
   @Output() all = new EventEmitter();
   @Output() active = new EventEmitter();
   @Output() completed = new EventEmitter();

@@ -7,7 +7,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class TodoHeaderComponent implements OnInit {
   name: string;
+  isToggleAll: boolean;
+
   @Output() addItem = new EventEmitter<string>();
+  @Output() toggleAllCompleted = new EventEmitter();
+  @Output() toggleAllIncompleted = new EventEmitter();
 
   constructor() { }
 
@@ -19,4 +23,11 @@ export class TodoHeaderComponent implements OnInit {
     this.name = '';
   }
 
+  onToggleAllChange() {
+    if (this.isToggleAll) {
+      this.toggleAllCompleted.next();
+    } else {
+      this.toggleAllIncompleted.next();
+    }
+  }
 }

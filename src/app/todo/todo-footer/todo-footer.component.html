@@ -1,17 +1,17 @@
 <footer class="footer">
   <span class="todo-count">
-    <strong>{{ leftCount }}</strong> item(s) left
+    <strong>{{ count }}</strong> item(s) left
   </span>
 
   <ul class="filters">
     <li>
-      <a href="#/" class="selected" (click)="onShowAll()">All</a>
+      <a href="#/" [class.selected]="filter === 'all'" (click)="onShowAll()">All</a>
     </li>
     <li>
-      <a href="#/active" (click)="onShowActive()">Active</a>
+      <a href="#/active" [class.selected]="filter === 'active'" (click)="onShowActive()">Active</a>
     </li>
     <li>
-      <a href="#/completed" (click)="onShowCompleted()">Completed</a>
+      <a href="#/completed" [class.selected]="filter === 'completed'" (click)="onShowCompleted()">Completed</a>
     </li>
   </ul>
 

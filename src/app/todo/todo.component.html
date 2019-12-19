@@ -1,6 +1,10 @@
 
 <section class="todoapp">
-  <app-todo-header (addItem)="onAddItem($event)"></app-todo-header>
+  <app-todo-header 
+  (addItem)="onAddItem($event)"
+  (toggleAllCompleted)="onToggleAllCompleted()"
+  (toggleAllIncompleted)="onToggleAllIncompleted()">
+</app-todo-header>
   <app-todos 
     [todos]="todos$ | async"
     (checkItem)="onCheckItem($event)"
@@ -8,7 +12,8 @@
     (removeItem)="onRemoveItem($event)">
   </app-todos>
   <app-todo-footer 
-    [leftCount]="incompletedTodosCount$ | async"
+    [count]="incompletedTodosCount$ | async"
+    [filter]="filter$ | async"
     (all)="onShowAll()"
     (active)="onShowActive()"
     (completed)="onShowCompleted()"

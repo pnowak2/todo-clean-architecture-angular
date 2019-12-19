@@ -11,7 +11,9 @@
     <input 
       id="toggle-all" 
       class="toggle-all" 
-      type="checkbox">
+      type="checkbox"
+      [(ngModel)]="isToggleAll"
+      (change)="onToggleAllChange()">
     <label for="toggle-all">
       Mark all as complete
     </label>

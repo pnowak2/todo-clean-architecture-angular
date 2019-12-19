@@ -6,7 +6,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./todo-footer.component.scss']
 })
 export class TodoFooterComponent implements OnInit {
-  @Input() leftCount: number;
+  @Input() count: number;
+  @Input() filter: number;
   @Output() all = new EventEmitter();
   @Output() active = new EventEmitter();
   @Output() completed = new EventEmitter();

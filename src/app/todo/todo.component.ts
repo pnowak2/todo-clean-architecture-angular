@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { TodoVM } from '@domisoft/todo-clean-architecture';
-import { TodoPresenter } from '@domisoft/todo-clean-architecture';
+import { TodoPresenter as TodoApplication } from '@domisoft/todo-clean-architecture';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class TodoComponent implements OnInit {
   activeTodosCount$ = this.todoApp.activeTodosCount$;
   filter$ = this.todoApp.filter$;
 
-  constructor(private todoApp: TodoPresenter, private route: ActivatedRoute) {
+  constructor(private todoApp: TodoApplication, private route: ActivatedRoute) {
     route.fragment.subscribe(p => {
       if (p.includes('active')) {
         this.todoApp.getActiveTodos();
